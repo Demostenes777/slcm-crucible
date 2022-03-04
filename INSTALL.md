@@ -4,7 +4,7 @@ This document gives the instructions to install an OpenShift cluster in a fully 
 
 ## Prepare the VM
 
-Run the pre-deployment.yml playbook with Ansible
+Run the pre-deployment.yml playbook with Ansible. This will automate the following steps defined in ...
 
 TBD
 

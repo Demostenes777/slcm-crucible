@@ -1,0 +1,28 @@
+---
+- name: Configure user accounts
+  hosts: all
+  gather_facts: false
+  vars_files:
+    - ../vars/secret.yaml
+  tasks:
+    - name: Create the group crucible
+      group:
+        name: crucible
+        state: present
+
+    - name: Verify that the user redhat exists and belongs to the crucible group
+      user:
+        name: redhat
+        groups: crucible
+
+    - name: Verify that the user crucible exists and belongs to the crucible group
+      user:
+        name: crucible
+        password: "{{ CRUCIBLE_PASS | password_hash('sha512') }}"
+        groups: crucible
+
+    - name: Modify sudo config to allow crucible users sudo without a password
+      copy:
+        content: "%crucible ALL=(ALL) NOPASSWD: ALL"
+        dest: /etc/sudoers.d/crucible
+        mode: 0440

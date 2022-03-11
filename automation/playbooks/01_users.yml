@@ -1,9 +1,9 @@
 ---
 - name: Configure user accounts
-  hosts: all
+  hosts: localhost
   gather_facts: false
   vars_files:
-    - ../vars/secret.yaml
+    - ../vars/secret.yml
   tasks:
     - name: Create the group crucible
       group:

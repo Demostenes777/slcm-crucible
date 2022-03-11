@@ -20,25 +20,6 @@ Assumptions:
 
 ## Steps
 
-### Check VM network configuration
-
-You will need two network interfaces. The first one (enp1s0 in the diagram) must have access to the Internet. The second one (enp7s0 in
-the diagram) does not need an IP address, just needs to be up.
-
-### Install Ansible
-
-Install the EPEL repository
-
-> $ sudo subscription-manager repos --enable "codeready-builder-for-rhel-8-$(arch)-rpms"
->
-> $ sudo yum -y install <https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm>
-
-
-Install Ansible
-
-> $ sudo yum install ansible
-
-
 ### Enable sudo for your user without password
 
 Create the crucible group

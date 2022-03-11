@@ -78,6 +78,8 @@ Container Platform 4.9](https://docs.openshift.com/container-platform/4.9/cli_re
 If you are using RHEL 8.4 please update it, otherwise you may encounter problems with outdated packages.
 > $ sudo dnf -y update
 
+Checking if this step with RHEL 8.5 is unnecesary
+
 ### Edit /etc/libvirt/qemu.conf
 
 > $ sudo vim /etc/libvirt/qemu.conf

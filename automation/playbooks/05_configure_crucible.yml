@@ -6,3 +6,8 @@
       git:
         repo: 'https://github.com/redhat-partner-solutions/crucible.git'
         dest: /home/redhat/crucible
+        
+    - name: Copy inventory file
+      copy:
+        src: /home/redhat/slcm-crucible/inventory.yml
+        dest: /home/redhat/crucible/inventory.yml

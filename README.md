@@ -30,6 +30,11 @@ Install Ansible
 
 > $ sudo yum install ansible
 
+### Download the pull secret
+
+Please [download](https://console.redhat.com/openshift/install/metal/installer-provisioned)
+the pull secret and place it at your home directory
+
 ### Download slcm-crucible automation playbooks
 
 On your VM, download the slcm-crucible project in your home

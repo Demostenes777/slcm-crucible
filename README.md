@@ -57,6 +57,16 @@ Edit the file ~/slcm-crucible/vars/secret.yml and ensure that the three variable
 
 > $ ansible-vault encrypt ~/slcm-crucible/vars/secret.yml
 
+### Edit inventory.vault.yml
+
+Edit the file ~/slcm-crucible/inventory.vault.yml and add your sensitive information
+
+> $ vim ~/slcm-crucible/inventory.vault.yml
+
+### Encrypt inventory.vault.yml with ansible-vault
+
+> $ ansible-vault encrypt ~/slcm-crucible/inventory.vault.yml
+
 ## Prepare the host
 
 Execute pre-deployment.yml playbook to install all the required dependencies and run scenario-specific steps.

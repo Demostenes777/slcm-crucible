@@ -35,9 +35,9 @@
           line: 'group = "crucible"'
 
       - name: Start libvirtd
-          service:
-            name: libvirtd
-            state: restarted
+        service:
+          name: libvirtd
+          state: restarted
 
     - name: Update firewall policies
       firewalld:

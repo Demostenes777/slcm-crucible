@@ -6,10 +6,9 @@
       debug:
         var: ansible_facts['python_version']
 
-    - name: Install git, python3-netaddr, skopeo and podman
+    - name: Install python3-netaddr, skopeo and podman
       package:
         name:
-          - git
           - python3-netaddr
           - skopeo
           - podman

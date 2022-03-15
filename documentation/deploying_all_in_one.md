@@ -180,7 +180,9 @@ listen-address=127.0.0.1,<your_virtual_bridge_ip>
 
 ### Run pre-deployment validation playbooks
 
-> $ cd ~/crucible ansible-playbook -i inventory.yml prereq_facts_check.yml -e "@inventory.vault.yml" --ask-vault-pass
+> $ cd ~/crucible 
+> 
+> $ ansible-playbook -i inventory.yml prereq_facts_check.yml -e "@inventory.vault.yml" --ask-vault-pass
 >
 > $ ansible-playbook -i inventory.yml playbooks/validate_inventory.yml -e "@inventory.vault.yml" --ask-vault-pass
 

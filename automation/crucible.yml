@@ -1,0 +1,15 @@
+---
+- name: Execute pre-requisites facts check crucible playbook
+  shell:
+    chdir: ~/crucible
+    cmd: ansible-playbook -i inventory.yml prereq_facts_check.yml -e "@inventory.vault.yml" --vault-id @prompt
+
+- name: Execute validate inventory crucible playbook
+  shell:
+    chdir: ~/crucible
+    cmd: ansible-playbook -i inventory.yml playbooks/validate_inventory.yml -e "@inventory.vault.yml" --vault-id @prompt
+
+- name: Execute create main crucible playbook
+  shell:
+    chdir: ~/crucible
+    cmd: ansible-playbook -i inventory.yml site.yml -e "@inventory.vault.yml" --vault-id @prompt

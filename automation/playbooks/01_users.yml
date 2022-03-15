@@ -5,16 +5,6 @@
   vars_files:
     - ../vars/secret.yml
   tasks:
-    - name: Create the group crucible
-      group:
-        name: crucible
-        state: present
-
-    - name: Verify that the user redhat exists and belongs to the crucible group
-      user:
-        name: redhat
-        groups: crucible
-
     - name: Verify that the user crucible exists and belongs to the crucible group
       user:
         name: crucible

@@ -254,8 +254,8 @@ all:
             bmc_address: "slcm-rhocp.jnpr.bos2.lab:8082" # port can be changed using sushy_tools_port on the vm_host
             vm_spec:
               cpu_cores: 4
-              ram_mib: 16384
-              disk_size_gb: 20
+              ram_mib: 32768
+              disk_size_gb: 50
           hosts:
             super1:
               ansible_host: 10.60.0.101

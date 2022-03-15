@@ -8,15 +8,29 @@ The host is running RHEL 8.5 and has a registered subscription
 
 ### Login as redhat user
 
-If the user does not exist, create it
+If the user does not exist, create it, be sure to grant the user admin rights
 
-> $ sudo useradd redhat
-> $ su redhat
+> # useradd redhat
+> # usermod -aG sudo redhat
+> # su redhat
+
+### Create the crucible group
+
+> $ sudo groupadd crucible
+
+Add the redhat user to the crucible group
+
+> $ sudo usermod -aG crucible redhat
 
 ### Check VM network configuration
 
 You will need two network interfaces. The first one (enp1s0 in the diagram) must have access to the Internet. The second one (enp7s0 in
 the diagram) does not need an IP address, just needs to be up.
+
+### Create ssh key
+
+> $ ssh-keygen -t rsa -N '' -b 4096
+> $ ssh-copy-id redhat@localhost
 
 ### Install Ansible
 
@@ -24,11 +38,15 @@ Install the EPEL repository
 
 > $ sudo subscription-manager repos --enable "codeready-builder-for-rhel-8-$(arch)-rpms"
 >
-> $ sudo yum -y install <https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm>
+> $ sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 
 Install Ansible
 
 > $ sudo yum install ansible
+
+### Install git package
+
+> $ sudo yum install git
 
 ### Download the pull secret
 
@@ -41,13 +59,13 @@ On your VM, download the slcm-crucible project in your home
 
 > $ cd ~
 > 
-> $ git@gitlab.cee.redhat.com:red-hat-juniper-joint-lab/slcm-automation/slcm-crucible.git
+> $ git clone https://github.com/Demostenes777/slcm-crucible
 
 ### Edit secret.yml
 
 Edit the file ~/slcm-crucible/vars/secret.yml and ensure that the three variables have been updated with your information
 
-> $ vim ~/slcm-crucible/vars/secret.yml
+> $ vim ~/slcm-crucible/automation/vars/secret.yml
 > 
 > REDHAT_SUBSCRIPTION_USERNAME: add_your_username_here
 > 

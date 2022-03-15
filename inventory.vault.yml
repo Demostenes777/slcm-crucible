@@ -6,9 +6,11 @@
 # HTTP Secret for the Container Registry.
 # More information on the vars used to configure the Registry can be found here:
 # https://docs.docker.com/registry/configuration/#http
+# You can put a value of your choice here
 VAULT_REGISTRY_HOST_REGISTRY_HTTP_SECRET: SECRET
 
 # Credentials for the Disconnected Registry (if relevant)
+# Use the crucible user and its password
 VAULT_REGISTRY_HOST_DISCONNECTED_REGISTRY_USER: USER
 VAULT_REGISTRY_HOST_DISCONNECTED_REGISTRY_PASSWORD: PASSWORD
 

@@ -1,0 +1,6 @@
+---
+- name: Prepare the bastion for the fully virtualized deployment
+  import_playbook: pre-deployment.yml
+
+- name: Execute crucible automation playbooks
+  import_playbook: crucible.yml

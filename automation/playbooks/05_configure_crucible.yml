@@ -1,6 +1,8 @@
 ---
 - name: Configure Crucible
   hosts: localhost
+  gather_facts: false
+  become: false
   tasks:
     - name: Download crucible from repository
       git:

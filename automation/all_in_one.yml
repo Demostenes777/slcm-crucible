@@ -3,4 +3,4 @@
   import_playbook: pre-deployment.yml
 
 - name: Execute crucible automation playbooks
-  import_playbook: crucible.yml
+  import_playbook: prereq_facts_check.yml 

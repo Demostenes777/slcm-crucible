@@ -10,9 +10,9 @@ The host is running RHEL 8.5 and has a registered subscription
 
 If the user does not exist, create it, be sure to grant the user admin rights
 
-> # useradd redhat
-> # usermod -aG sudo redhat
-> # su redhat
+> [user]# useradd redhat
+> [user]# usermod -aG sudo redhat
+> [user]# su redhat
 
 ### Create the crucible group
 
